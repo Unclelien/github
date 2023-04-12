@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第九題使用string物件檢查電子郵件</title>
+</head>
+
+<body>
+    <input type="text" id="addr">
+    <input type="button" id="btn" value="click">
+    <script>
+        // 使用string物件檢查電子郵件中要有 @ . 以及 @ 不能重複
+        // let addr = document.getElementById("addr").value;
+        let btn = document.getElementById("btn");
+        // let re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        btn.addEventListener("click", () => {
+            let addr = document.getElementById("addr").value;
+            let re = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            // console.log(addr);
+            if (re.test(addr)) {
+                alert("成功! 符合 「re」 的格式");
+            } else {
+                alert("失敗! 不符合 「re」 的格式");
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>

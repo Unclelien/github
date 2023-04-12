@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 第二題 聖誕樹</title>
+</head>
+
+<body>
+    <!-- 第二題 用^畫出下列圖型 聖誕樹 -->
+    <div id="tree"></div>
+    <script>
+        let el = document.getElementById('tree');
+        let symbol = "^";
+        let space = "&ensp;"
+        let layers = 8;
+        let content = "";
+        let temp = "";
+
+        for (let i = 1; i <= layers; i++) {
+            let row = "";
+            row = symbol.repeat(i * 2 - 1);
+            let padding = "";
+            padding = space.repeat(layers - i);
+            temp += padding + row + "<br>";
+            content = temp;
+        }
+
+        el.innerHTML = content;
+
+        let trunk = space.repeat(layers - 1) + symbol + "<br>" + space.repeat(layers - 1) + symbol + "<br>";
+
+        el.innerHTML += trunk;
+    </script>
+</body>
+
+</html>

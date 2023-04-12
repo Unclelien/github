@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <title>第八題 密碼檢查 第十一題 改用Regex物件來完成驗證</title>
+</head>
+
+<body>
+    <label>Password:</label>
+    <input type="password" id="idPwd" size="6" /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+    <span id="idsp"></span><br />
+    <input type="button" id="idbut" value="checkPassword" onclick="checkPwd();" />
+
+    <script>
+        function checkPwd() {
+            //取得idPwd元素
+            let el = document.getElementById("idPwd");
+            //取得idPwd元素值
+            let Pwd = el.value;
+            // alert(Pwd);
+            let re = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[\w,@#$%^&*].{9,}$/;
+            // 密碼驗證條件
+            // 8位數以上
+            // 至少包含一個大寫字母、小寫字母、數字、符號
+            // 判斷元素值是否為空白，密碼長度是否大於8
+            // console.log(re.test(Pwd));
+            //如果長度是否大於8，判斷是否包含字母、數字、特殊符號
+            if (Pwd === "") {
+                alert("不可以空白!!")
+            } else if (re.test(Pwd)) {
+                alert("成功");
+            } else {
+                alert("失敗");
+            }
+        }    
+    </script>
+</body>
+
+</html>

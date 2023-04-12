@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五題 請畫出九九乘法表</title>
+</head>
+
+<body>
+    <script>
+        // 第五題 請畫出九九乘法表
+        function myFun() {
+            document.write('<table style="color: red;border: 3px solid aqua ; background-color:lightblue">')
+            for (let i = 1; i <= 9; i++) {
+                document.write("<tr>")
+                for (let j = 1; j <= 9; j++) {
+                    // console.log(i + "x" + j + "=" + i * j); // old
+                    // console.log(`${i} x ${j} = ${i * j}`); // new
+                    document.write(`<td style='border-right:2px solid aqua;border-collapse:collapse'>${i} * ${j} = ${i * j}</td>`);
+                }
+                document.write('</tr>')
+            }
+            document.write('</table')
+        }
+        myFun();
+    </script>
+</body>
+
+</html>

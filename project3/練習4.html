@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四題輸入西元年，判斷是否是閏年</title>
+</head>
+
+<body>
+    <script>
+        // 第四題輸入西元年，判斷是否是閏年
+        // 西元除以400可整除，為閏年。
+        // 西元除以4可整除但除以100不可整除，為閏年。
+        // 西元除以4不可整除，為平年。
+        // 西元除以100可整除但除以400不可整除，為平年
+        const Year = window.prompt("請輸入西元年", 1911);
+        if (Year % 400 == 0) {
+            console.log("閏年");
+        } else if (Year % 4 == 0 && Year % 100 != 0) {
+            console.log("閏年");
+        } else if (Year % 4 != 0) {
+            console.log("平年");
+        } else if (Year % 100 == 0 && Year % 400 != 0) {
+            console.log("平年");
+        }
+    </script>
+</body>
+
+</html>

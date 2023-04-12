@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 第二題 聖誕樹(可調整樹層)</title>
+</head>
+
+<body>
+    <!-- 第二題 用^畫出下列圖型 聖誕樹(可調整樹層) -->
+    <div id="tree"></div>
+    <input type="text" id="layers" placeholder="請輸入樹層">
+    <input type="button" id="btn1" value="button">
+    <script>
+        let el = document.getElementById('tree');
+        let symbol = "^";
+        let space = "&ensp;"
+        let btn1 = document.getElementById("btn1")
+        btn1.addEventListener("click", () => {
+            let layers = document.getElementById("layers").value;
+            let content = "";
+            let temp = "";
+
+            for (let i = 1; i <= layers; i++) {
+                let row = "";
+                row = symbol.repeat(i * 2 - 1);
+                let padding = "";
+                padding = space.repeat(layers - i);
+                temp += padding + row + "<br>";
+                content = temp;
+            }
+
+            el.innerHTML = content;
+
+            let trunk = space.repeat(layers - 1) + symbol + "<br>" + space.repeat(layers - 1) + symbol + "<br>";
+
+            el.innerHTML += trunk;
+        })
+    </script>
+</body>
+
+</html>

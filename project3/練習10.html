@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十題讓使用者輸入生日計算幾歲了</title>
+</head>
+<input type="text" id="birth" placeholder="請輸入西元出生年月日">
+<input type="button" id="btn" value="click">
+<div id="age"></div>
+
+<body>
+    <script>
+        document.getElementById("btn").addEventListener("click", () => {
+            let birth = document.getElementById("birth").value;
+            const Today = new Date();
+            const Year = Today.getFullYear();
+            const Mon = Today.getMonth();
+            const DT = Today.getDate();
+            const BYear = birth.substring(0, 4);
+            const BMon = birth.substring(4, 6);
+            const BDate = birth.substring(6, 8);
+            // console.log(BYear);
+            // console.log(BMon);
+            // console.log(BDate);
+            let ageYear = Year - BYear;
+            let ageMonth = BMon - Mon;
+            let ageDate = BDate - DT;
+            if (ageMonth > 0) {
+                ageYear -= 1;
+                document.getElementById("age").innerHTML = ageYear;
+            } else if (ageMonth = 0 && ageDate > 0) {
+                ageYear -= 1;
+                document.getElementById("age").innerHTML = ageYear;
+            } else {
+                document.getElementById("age").innerHTML = ageYear;
+            }
+        })
+    </script>
+</body>
+
+</html>

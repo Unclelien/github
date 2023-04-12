@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三題 猜數字遊戲</title>
+</head>
+
+<body>
+    <input type="text" id="number">
+    <input type="button" id="btn" value=" click">
+    <script>
+        // 請輸入猜測的數字(1~100)，輸入0離開遊戲 =>50
+        // 數字太大!
+        // 請輸入猜測的數字(1~100)，輸入0離開遊戲 =>25
+        // 數字太大!
+        // 請輸入猜測的數字(1~100)，輸入0離開遊戲 =>12
+        // 數字太大!
+        // 請輸入猜測的數字(1~100)，輸入0離開遊戲 =>6
+        // console.log(num); //0-1之間的值
+        // console.log(num * 100); //0-1之間的值
+        //Math.floor() 無條件捨去
+        let num = Math.random();
+        let guessNum = Math.floor(num * 100); //取整數 while( NUM==0) { } 
+        function myGuess() {
+            let myNumber = document.getElementById("number").value;
+            console.log(guessNum);
+            if (myNumber == 0) {
+                alert("遊戲結束");
+            } else if (guessNum > myNumber) {
+                alert("數字太小");
+            } else if (guessNum < myNumber) {
+                alert("數字太大!");
+            }
+            else {
+                alert("猜中了");
+                num = Math.random();
+                guessNum = Math.floor(num * 100);
+            }
+        }
+        document.getElementById("btn").addEventListener("click", myGuess);
+    </script>
+</body>
+
+</html>
