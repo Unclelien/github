@@ -1,0 +1,23 @@
+.list {
+    border: 8px double orange;
+    /**border-radius: 20px 25px 30px 45px;**/
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.list1 {
+    list-style-type: none;
+    list-style-image: url(../image/01.jpg);
+}
+
+.in {
+    background-color: gray;
+    list-style-position: inside;
+}
+
+.out {
+    background-color: red;
+    list-style-position: outside;
+}

@@ -1,0 +1,50 @@
+.st1 {
+    color: green;
+
+
+}
+
+.st2 {
+    color: orange;
+
+
+}
+
+.sy1 {
+    text-transform: capitalize;
+
+}
+
+.sy2 {
+    font-family: 標楷體;
+
+}
+
+.kt1 {
+    font-style: italic;
+
+}
+
+.kt2 {
+    font-style: oblique;
+}
+
+h1 {
+    color: blue;
+
+}
+
+.ww {
+    color: yellowgreen;
+
+}
+
+#ee {
+    color: black;
+}
+
+p {
+    color: red;
+    font-size: 24px;
+    text-decoration: overline;
+}
